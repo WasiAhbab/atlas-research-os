@@ -1,0 +1,46 @@
+{
+  "name": "atlas-research-os-cloud",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "preflight": "node scripts/preflight-cloud.mjs",
+    "setup": "node scripts/setup-cloud.mjs",
+    "smoke": "node scripts/preflight-cloud.mjs",
+    "doctor": "npm run typecheck && npm run test:cloud",
+    "test:workflows": "npm run test:cloud",
+    "test:cloud": "node scripts/test-cloud.mjs",
+    "import:local": "tsx scripts/import-local.ts",
+    "db:setup": "tsx scripts/setup-database.ts"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.2",
+    "next": "^16.1.0",
+    "pg": "^8.23.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "workflow": "^5.0.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@types/node": "^22.15.0",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.0",
+    "esbuild": "^0.28.2"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "overrides": {
+    "@workflow/core": {
+      "nanoid": "^5.1.16"
+    }
+  }
+}
