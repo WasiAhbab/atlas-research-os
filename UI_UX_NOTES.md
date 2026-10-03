@@ -44,3 +44,9 @@ Open http://localhost:3000. A clean copy seeds a clearly labeled demo workspace.
 The delivery archive excludes local credentials, databases, generated Markdown, dependencies and build output. Keep the original installation backed up. To retain its data, stop the app, copy its `data/` folder and `.env.local` together into the new project, then restart. The encryption key in `.env.local` must stay paired with the encrypted vault. Alternatively, apply the changed `components/Dashboard.tsx`, `app/globals.css`, and `lib/db.ts` files to the original project after backing it up.
 
 The original Downloads project was used as the source because the prior ChatGPT `/mnt/data` path is not present on this computer. Its source and private data were not modified.
+
+## Workspace arrival — October 3, 2026
+
+Replaced the plain workspace data-loading screen with a responsive, dark green arrival screen: fine orbital lines, gently unfolding planes around an Atlas monogram, warm serif typography, and an indeterminate light trail. The same component also covers Next.js workspace route loading. The existing 0.8-second navigation interlude and immediate navigation within the workspace are unchanged; no extra minimum wait, percentage, or simulated processing stages were added. Screen readers receive a concise status, and reduced-motion preferences disable animation. Loading errors retain the existing message and retry action.
+
+Verification: production build, TypeScript, and all 18 cloud checks passed. Browser preview used the actual Dashboard with an intercepted pending request; checked the loading layout, 390px viewport without horizontal overflow, and the error/retry screen with a simulated failed request. No private data or AI API calls were used.

@@ -4,6 +4,7 @@ import { FormEvent, useCallback, useEffect, useMemo, useRef, useState, type Reac
 
 import { ResearchHistory, NotificationInbox } from "./ResearchRecords";
 import ProviderModelSelect from "./ProviderModelSelect";
+import WorkspaceLoader from "./WorkspaceLoader";
 
 type Tab = "overview" | "research" | "library" | "search" | "history" | "issues" | "approvals" | "settings" | "notifications";
 type State = any;
@@ -324,7 +325,7 @@ function Config({label,value,ok}:any){return <div className="config-row"><span>{
 function Stat({label,value,sub,icon,warn}:any){return <div className={`stat-card ${warn?"warn":""}`}><div className="stat-top"><span>{label}</span><div className="stat-icon"><Icon name={icon}/></div></div><strong>{value}</strong><small>{sub}</small></div>}
 function PanelHead({title,sub,badge}:any){return <div className="panel-head"><div><h3>{title}</h3><p>{sub}</p></div>{badge&&<span className="panel-badge">{badge}</span>}</div>}
 function Empty({icon,title,text}:any){return <div className="empty"><div><Icon name={icon}/></div><b>{title}</b><p>{text}</p></div>}
-function LoadingShell(){return <div className="loading-shell"><div className="loading-logo">A</div><h2>Loading Atlas Universal Research OS</h2><span></span></div>}
+function LoadingShell(){return <WorkspaceLoader/>}
 
 function Icon({ name }: { name: string }) {
   const paths: Record<string, ReactNode> = {

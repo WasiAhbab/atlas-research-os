@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import "./refinement.css";
+import "./workspace-loading.css";
 import NavigationTransition from "@/components/NavigationTransition";
 
 export const metadata: Metadata = {
